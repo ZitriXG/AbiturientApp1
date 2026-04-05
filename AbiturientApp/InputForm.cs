@@ -6,6 +6,9 @@ namespace AbiturientApp
 {
     public partial class InputForm : Form
     {
+        private const double MinAverageScore = 0;
+        private const double MaxAverageScore = 5;
+
         public Abiturient AbiturientData { get; private set; }
 
         public InputForm()
@@ -57,9 +60,9 @@ namespace AbiturientApp
                 return;
             }
 
-            if (averageScore < 0 || averageScore > 5)
+            if (averageScore < MinAverageScore || averageScore > MaxAverageScore)
             {
-                ShowValidationError("Средний балл должен быть в диапазоне от 0 до 5.");
+                ShowValidationError($"Средний балл должен быть в диапазоне от {MinAverageScore} до {MaxAverageScore}.");
                 return;
             }
 

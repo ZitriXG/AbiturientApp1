@@ -120,6 +120,7 @@ namespace AbiturientApp
 
             if (string.IsNullOrEmpty(value))
             {
+                // Пустой запрос сбрасывает поиск и показывает полный список.
                 RefreshGrid();
                 return;
             }
