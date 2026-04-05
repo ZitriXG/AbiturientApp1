@@ -17,7 +17,7 @@ namespace AbiturientApp
         {
             if (existing == null)
             {
-                return;
+                throw new ArgumentNullException(nameof(existing));
             }
 
             tbFullName.Text = existing.FullName;
