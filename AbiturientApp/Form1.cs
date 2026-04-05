@@ -129,12 +129,5 @@ namespace AbiturientApp
             dataGridView1.DataSource = searchResults;
         }
 
-        private void cbSearchField_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void tbSearchValue_TextChanged(object sender, EventArgs e)
-        {
-        }
     }
 }

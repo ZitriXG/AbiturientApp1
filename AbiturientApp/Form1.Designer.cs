@@ -119,7 +119,6 @@
             this.cbSearchField.Name = "cbSearchField";
             this.cbSearchField.Size = new System.Drawing.Size(181, 21);
             this.cbSearchField.TabIndex = 0;
-            this.cbSearchField.SelectedIndexChanged += new System.EventHandler(this.cbSearchField_SelectedIndexChanged);
             // 
             // tbSearchValue
             // 
@@ -127,7 +126,6 @@
             this.tbSearchValue.Name = "tbSearchValue";
             this.tbSearchValue.Size = new System.Drawing.Size(101, 20);
             this.tbSearchValue.TabIndex = 1;
-            this.tbSearchValue.TextChanged += new System.EventHandler(this.tbSearchValue_TextChanged);
             // 
             // btnSearch
             // 
