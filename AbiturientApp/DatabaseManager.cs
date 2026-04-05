@@ -115,7 +115,9 @@ namespace AbiturientApp
             {
                 bool match = false;
 
-                switch (fieldName.ToLower())
+                string normalizedField = fieldName.Trim().ToLower();
+
+                switch (normalizedField)
                 {
                     case "фио":
                         match = a.FullName.ToLower().Contains(searchValue.ToLower());
