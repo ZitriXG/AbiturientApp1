@@ -120,14 +120,23 @@ namespace AbiturientApp
 
             if (string.IsNullOrEmpty(value))
             {
-                // Пустой запрос сбрасывает поиск и показывает полный список.
-                RefreshGrid();
+                MessageBox.Show("Введите значение для поиска!", "Информация",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             List<Abiturient> searchResults = dbManager.Search(abiturientsList, field, value);
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = searchResults;
+
+            if (searchResults.Count == 0)
+            {
+                MessageBox.Show("Записи, соответствующие критерию поиска, не найдены.", "Результат поиска",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = searchResults;
+            }
         }
 
     }

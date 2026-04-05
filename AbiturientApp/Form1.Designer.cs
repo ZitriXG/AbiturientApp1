@@ -114,7 +114,7 @@
             "ФИО",
             "Год рождения",
             "Школа",
-            "Средний балл "});
+            "Средний балл"});
             this.cbSearchField.Location = new System.Drawing.Point(6, 19);
             this.cbSearchField.Name = "cbSearchField";
             this.cbSearchField.Size = new System.Drawing.Size(181, 21);
