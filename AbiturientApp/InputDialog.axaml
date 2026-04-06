@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AbiturientApp.InputDialog"
+        Title="Данные абитуриента"
+        Width="380" Height="220"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner">
+
+    <Grid Margin="16" RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="130,*">
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="ФИО" VerticalAlignment="Center" Margin="0,0,0,8"/>
+        <TextBox   Grid.Row="0" Grid.Column="1" Name="TbFullName" Margin="0,0,0,8"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Год рождения" VerticalAlignment="Center" Margin="0,0,0,8"/>
+        <TextBox   Grid.Row="1" Grid.Column="1" Name="TbBirthYear" Margin="0,0,0,8"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Школа" VerticalAlignment="Center" Margin="0,0,0,8"/>
+        <TextBox   Grid.Row="2" Grid.Column="1" Name="TbSchool" Margin="0,0,0,8"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Средний балл" VerticalAlignment="Center" Margin="0,0,0,16"/>
+        <TextBox   Grid.Row="3" Grid.Column="1" Name="TbAverageScore" Margin="0,0,0,16"/>
+
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                    Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+            <Button Content="ОК"      Width="80" Click="BtnOk_Click"/>
+            <Button Content="Отмена"  Width="80" Click="BtnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

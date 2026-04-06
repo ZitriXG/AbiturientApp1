@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AbiturientApp.MainWindow"
+        Title="Управление базой данных абитуриентов"
+        Width="820" Height="560"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="12" RowDefinitions="*,Auto" ColumnDefinitions="*,210">
+
+        <!-- DataGrid -->
+        <DataGrid Grid.Row="0" Grid.Column="0"
+                  Name="DataGrid"
+                  Margin="0,0,8,8"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}" Width="*"/>
+                <DataGridTextColumn Header="Год рождения" Binding="{Binding BirthYear}" Width="Auto"/>
+                <DataGridTextColumn Header="Школа" Binding="{Binding SchoolNumber}" Width="Auto"/>
+                <DataGridTextColumn Header="Средний балл" Binding="{Binding AverageScore}" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Search Panel -->
+        <Border Grid.Row="0" Grid.Column="1"
+                BorderBrush="Gray" BorderThickness="1"
+                CornerRadius="4" Padding="8"
+                VerticalAlignment="Top">
+            <StackPanel Spacing="6">
+                <TextBlock Text="Поиск" FontWeight="Bold" Margin="0,0,0,4"/>
+                <ComboBox Name="CbSearchField" Width="190" SelectedIndex="0">
+                    <ComboBoxItem Content="ФИО"/>
+                    <ComboBoxItem Content="Год рождения"/>
+                    <ComboBoxItem Content="Школа"/>
+                    <ComboBoxItem Content="Средний балл"/>
+                </ComboBox>
+                <Grid ColumnDefinitions="*,Auto">
+                    <TextBox Grid.Column="0" Name="TbSearchValue" Margin="0,0,4,0"/>
+                    <Button Grid.Column="1" Content="Найти" Click="BtnSearch_Click"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <!-- Action Buttons -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                    Orientation="Horizontal" Spacing="8">
+            <Button Content="Добавить" Width="120" Height="60" Click="BtnAdd_Click"/>
+            <Button Content="Редактировать" Width="130" Height="60" Click="BtnEdit_Click"/>
+            <Button Content="Удалить" Width="120" Height="60" Click="BtnDelete_Click"/>
+            <Button Content="Анализ школ" Width="130" Height="60" Click="BtnAnalyze_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
